@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import requests
 import json
-from keys import client_id, api_key, headers, username
+from keys import client_id, api_key, username
 from geopy import geocoders
 from geopy.geocoders import Nominatim
 from flask import Flask, render_template, request, redirect
@@ -41,7 +41,8 @@ def find_food(category=None, location=None):
     except:
         return json.dumps({})
     url = 'https://api.yelp.com/v3/businesses/search?categories=' + category + '&latitude=' + latitude + '&longitude=' + longitude
-    response = requests.get(url, headers=headers)
+    header_str = '{"Authorization": "Bearer ' + api_key + '"}'
+    response = requests.get(url, headers=header_str)
     response = response.json()
     myList = []
     myDict = {}
