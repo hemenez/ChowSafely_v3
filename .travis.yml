@@ -1,0 +1,15 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t lhemenez/chowsafely-v2 .
+
+script:
+  - docker build -t lhemenez/web ./web
+  - docker build -t lhemenez/nginx ./nginx
+  # Logging in to the Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Taking images and pushing them to DockerHub
+  - docker push lhemenez/web
+  - docker push lhemenez/nginx
