@@ -5,7 +5,8 @@
             "name": "web",
             "image": "lhemenez/web",
             "hostname": "web",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "nginx",
@@ -18,7 +19,8 @@
                     "containerPort": 80
                 }
             ],
-            "links": ["web"]
+            "links": ["web"],
+            "memory": 128
         }
     ]
 }
