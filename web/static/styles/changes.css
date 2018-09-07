@@ -1,0 +1,127 @@
+/*  LINE 1 - 80
+body {
+    background-color: rgb(41, 158, 179);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: white;
+    justify-content: center;
+    padding-top: 8px;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+header {
+    background: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#poster {
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    padding-left: 16%;
+    color: black;
+}
+.panel-body {
+    margin: 10px;
+    border: 1px solid rgb(24, 89, 105);
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: tomato;
+    font-family: 'Roboto', sans-serif;
+}
+#fetch {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#city {
+    font-family: 'Roboto', sans-serif;
+}
+.img-responsive {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 9%;
+}
+
+#search {
+    background-color: rgb(24, 89, 105);
+    color: white;
+
+    /*border: 1px solid black;*/
+/*}
+
+#mypanel {
+    margin: 20px;
+}
+
+#search {
+    margin: 10px;
+}
+
+footer {
+    bottom: 0px;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+    background: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+*/
+
+
+/* LINE 89 - 91 .panel {
+    height: 200px;
+}*/
+
+/* LINE 103 - 117 temp removed
+.panel-body {
+    margin: 10px;
+    border: 1px solid rgb(24, 89, 105);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}*/
+/*
+.img-responsive {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 9%;
+}
+*/
+
+/* LINE 123 - 8
+.header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+}*/
+
+/*   LINE 232 - 237  position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto; */
+
+/*  MISCELLANEOUS   #mypanel {
+    margin: 20px;
+    background: rgb(41, 158, 179);
+    border: 0;
+}
+
+#herepanel {
+    background: white;
+    color: rgb(24, 89, 105);
+} */

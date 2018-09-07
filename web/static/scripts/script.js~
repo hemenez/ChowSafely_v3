@@ -1,0 +1,84 @@
+$(document).ready(function(){
+
+    $('#term').focus(function(){
+       var full = $("#poster").has("img").length ? true : false;
+       if(full == false){
+          $('#poster').empty();
+       }
+    });
+ 
+    var getData = function() { 
+ 
+	 var concern = $('input[name=concern]:checked').val();
+         var city = $('#city').val();
+         var distance = $('#distance').val()
+         var info = {};
+
+         info['concern'] = concern;
+         info['city'] = city;
+         info['distance'] = distance;
+ 
+          if(info['concern'] == '' || info['city'] ==''){
+	      $('#mypanel').empty();
+              $('#mypanel').append("<div class='panel-body' id='herepanel'><p>Please enter both your dietary concern and your desired city to search for food.</p></div>")
+          } else {
+ 
+             $.ajax({
+                type: 'POST',
+                url: '/search',
+                data: JSON.stringify(info),
+                contentType: 'application/json',
+                success: function(data) {
+                    $('#mypanel').empty();
+                    let mydata = JSON.parse(data);
+                    if ($.isEmptyObject(mydata) == true) {
+                        $('#mypanel').append("<div class='panel-body' id='herepanel'><p>Sorry, nothing came up! Please check that you are entering a valid United States zipcode and/or not entering a U.S. city.</p></div>")
+                        return
+                    }
+                    if (mydata['reason'] == 'bad_category') {
+                        $('#mypanel').append("<div class='panel-body' id='herepanel'><p>Sorry, we can't search for that. Try searching for vegan, gluten-free, or vegetarian food.</p></div>")
+                        return
+                    }
+                    if (mydata['business'].length < 1 ){
+                        $('#mypanel').append("<div class='panel-body' id='herepanel'><p>Sorry, nothing came up! Try widening your search.</p></div>")
+                        return;
+                    }
+                    for (let i = 0; i < data.length; i++) {
+                        let stuff = mydata["business"][i];
+                        var phoneStr = "";
+                        var addrStr = "";
+                        try {
+                            typeof stuff['phone'];
+                            var myPhone = stuff['phone'];
+                            var makeCall = ">Call now!</a></p>";
+                        } catch(error) {
+                            var myPhone = "";
+                            var  makeCall = makeCall.replace(">Call now!</a></p>", ">Don't call!</a></p>");
+                        }
+                        var phoneStr = "<p><a href=" + "tel:" + myPhone + makeCall;
+                        try {
+                            typeof stuff['street'];
+                            var addrStr = " @ " + stuff['street'];
+                        } catch(error) {
+                        }
+                        try {
+                            typeof stuff['name'];
+                            var nameStr = stuff['name'];
+                        } catch(error) {
+                            continue;
+                        }
+
+                        $('#mypanel').append("<div class='panel-body' id='herepanel'>" + nameStr + addrStr +
+                            phoneStr + "</div>"
+                        );                       
+                    }
+                },
+            });
+
+           }
+ 
+         return false;
+    }
+    $('#search').click(getData);
+
+ });

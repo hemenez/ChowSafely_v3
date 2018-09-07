@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    restart: always
+    build:
+      context: ./web
+    env_file: .env
+    environment:
+      - CLIENT_ID
+      - API_KEY
+      - HEADERS
+      - USERNAME
+    expose:
+      - "8000"
+    command: gunicorn myproject:app -b :8000 #--name myproject --log-level=debug --log-file=-
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - '80:80'
+    links:
+      - web
+    expose:
+      - "80"

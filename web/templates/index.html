@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lindsey Hemenez">
+    <meta name="description" content="A responsive restaurant finder for diners with dietary concerns">
+    <title>ChowSafely</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="../static/styles/bootstrap.min.css" rel="stylesheet" media="screen">    <!-- MY FAVICON -->
+    <!-- MY FAVICON -->
+    <link rel="shortcut icon" href="../static/images/plateandutens.png">
+    <link rel="stylesheet" href="../static/styles/style.css" />
+    <link href="../static/styles/smallscreen.css" rel="stylesheet">
+    <!--jQuery, linked from a CDN-->
+    <script src="../static/scripts/script.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<script src="../static/scripts/bootstrap.min.js"></script>
+<header>
+    <img class="img-header" src="../static/images/CSoff.png" alt="logo">
+</header>
+
+<!-- Button to trigger site description -->
+<button id="help" type="button">What is ChowSafely?</button>
+
+<!-- Container for site description -->
+<div class="container" id="desc">
+    <div class="panel panel-default" id="tellmemore">
+        <div class="panel-body">Find yourself having trouble eating out? Don't worry, ChowSafely is a search engine that finds food when you want, where you want.<br><br>Simply click the dropdown menu below and begin searching for restaurants!<br><br>
+            <button id="gotit" type="button" style="display: block; margin: 0 auto;">Close</button>
+        </div>
+    </div>
+  </div>
+<!-- Container for search bar -->  
+<div class="container" id="querybox">
+        <div class="loader" id="loader"></div>
+	<div class="row" id="searchbox">
+		<div class="col-md-12">
+            <div class="input-group" id="adv-search">
+                <span type="button" class="form-control text-center" placeholder="Click dropdown to begin search">Click &#9758 for food</span>
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" id="arrow" class="btn btn-default dropdown-toggle" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                    <label for="filter">Dietary Concern</label>
+                                    <select class="form-control" id="concern">
+                                        <option value="vegan" selected>Vegan</option>
+                                        <option value="gluten-free">Gluten-Free</option>
+                                        <option value="vegetarian">Vegetarian</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Zipcode</label>
+                                    <input class="form-control" type="text" id="city" />
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Distance To Travel (optional)</label>
+                                    <input class="form-control" type="text" placeholder="Defaulted to 25 miles" id="distance"/>
+                                  </div>
+                                  <button id="search" type="button" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+<!--Container for search results -->
+<div class='container' id="searchresults"></div>
+
+   <footer>
+     <p>Copyright &copy; ChowSafely 2018</p>
+   </footer>
+
+</body>
+</html>

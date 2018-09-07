@@ -1,0 +1,5 @@
+Flask>=1.0
+requests>=2.15
+geopy>=1.13
+Werkzeug>=0.10.4
+gunicorn>=19.3.0
