@@ -8,7 +8,6 @@ services:
     environment:
       - CLIENT_ID
       - API_KEY
-      - HEADERS
       - USERNAME
     expose:
       - "8000"
