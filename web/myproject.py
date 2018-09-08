@@ -41,8 +41,10 @@ def find_food(category=None, location=None):
     except:
         return json.dumps({})
     url = 'https://api.yelp.com/v3/businesses/search?categories=' + category + '&latitude=' + latitude + '&longitude=' + longitude
-    header_str = '{"Authorization": "Bearer ' + api_key + '"}'
-    response = requests.get(url, headers=header_str)
+    headers = {
+        'Authorization': "Bearer " + api_key
+    }
+    response = requests.get(url, headers=headers)
     response = response.json()
     myList = []
     myDict = {}
