@@ -11,9 +11,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-#ENTRYPOINT [ "python3" ]
-#gunicorn myproject:app -b 0.0.0.0:8000 #--name myproject --log-level=debug --log-file=-
-
-
 CMD ["gunicorn", "myproject:app", "-b", "0.0.0.0:8000"]
-#CMD [ "python3", "myproject.py" ]
