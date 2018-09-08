@@ -13,4 +13,4 @@ COPY . .
 
 #ENTRYPOINT [ "python3" ]
 
-#CMD [ "python3", "myproject.py" ]
+CMD [ "python3", "myproject.py" ]
