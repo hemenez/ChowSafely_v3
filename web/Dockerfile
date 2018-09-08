@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-WORKDIR '/app'
+WORKDIR /app
 
 RUN apt-get update -y && \
     apt-get install -y python3-pip python3-dev
