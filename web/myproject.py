@@ -97,4 +97,4 @@ def find_food(category=None, location=None):
     return json.dumps(myDict)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run()
