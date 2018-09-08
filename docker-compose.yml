@@ -11,7 +11,6 @@ services:
       - USERNAME
     expose:
       - "8000"
-    #command: gunicorn myproject:app -b 0.0.0.0:8000 #--name myproject --log-level=debug --log-file=-
   nginx:
     restart: always
     build:
