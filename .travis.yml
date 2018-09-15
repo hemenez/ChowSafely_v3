@@ -19,7 +19,8 @@ before_install:
   - gcloud config set project chowsafely-v3-216504
   - gcloud config set compute/zone us-west1-b
   - gcloud container clusters get-credentials chow-cluster
-  # log in to docker w/ credentials
+
+script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 deploy:
