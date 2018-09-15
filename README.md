@@ -1,1 +1,3 @@
-# ChowSafely_v2
+# ChowSafely_v3
+
+Used for deploying Kubernetes cluster
